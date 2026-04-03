@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lea Jazbinšek - Kontakt</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Text&display=swap" rel="stylesheet">
+  <!-- Font Awesome icons (for phone icon) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">L<span>J</span></div>
+      <button class="sesame" id="sesameBtn" aria-label="menu">
+        <img src="menu.svg" alt="Menu" class="menu-icon">
+      </button>
+        <ul class="sidenav" id="navMenu">
+          <li><a href="index.html" data-nav="home">Domov</a></li>
+          <li><a href="cv.html" data-nav="cv">CV</a></li>
+          <li><a href="contact.html" data-nav="contact">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Home page specific content -->
+    <section id="contact">    
+        <div class="container">
+            <h2 id="contactTitle">Kontakt</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p id="contactText" style="margin-bottom: 1rem;">Za sodelovanje me kontaktiraj 💻 </p>
+                    <div><i class="fas fa-envelope"></i> <span id="contactEmail">lea.jazbinsek01@gmail.com</span></div>
+                    <div><i class="fas fa-phone-alt"></i> <span id="contactPhone">+386 51 836 776</span></div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="nameInput" placeholder="Ime in priimek" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="emailInput" placeholder="E-pošta" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="3" id="msgInput" placeholder="Sporočilo..."></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn">Pošlji sporočilo</button>
+                    </form>
+                </div>
+            </div>
+        </div>       
+        </section>
+  </main>
+
+  <button id="floatingLangBtn" class="floating-lang">🇸🇮 SL</button>
+
+  <footer>
+    <p id="footerText">© 2026 Lea Jazbinšek<br>Vse pravice so pridržane</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
