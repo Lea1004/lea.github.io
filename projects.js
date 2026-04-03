@@ -245,7 +245,7 @@ const projects = {
         en: "Brand identity for a brochure for print",
         sl: "Grafična podoba in izdelavo brošure za tisk"
       },
-      thumbnail: "projects_assets/project2/Brochure_mockup.png",
+      thumbnail: "projects_assets/project2/brochure_mockup.png",
       slug: "coffee-themed-brochure",
       details: {
         type: {
