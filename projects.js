@@ -105,7 +105,7 @@ const projects = {
         ]
       }
     },
-    //----------- BRAND 4 ------ POSTER
+    //----------- POSTER -----------
     {
       "id": "gwg-infographic",
       "title": {
@@ -121,10 +121,10 @@ const projects = {
       "details": {
         "type": {
           "en": "Infographic poster",
-          "sl": "Infografski plakat"
+          "sl": "Infografika"
         },
         "images": [
-          "projects_assets/project4/GWG_info_title.png",
+          "projects_assets/project4/GWG_info_big.png",
         ],
         "sections": [
           {
