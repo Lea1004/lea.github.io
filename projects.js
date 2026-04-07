@@ -1,8 +1,8 @@
 const projects = {
   "brand-identity": [
-    // ---------- BRAND (newest) ---------
+    // ---------- Cvetličarna Viktorija ---------
     {
-      "id": "brand5",
+      "id": "CV",
       "title": {
         "en": "Cvetličarna Viktorija - Logo",
         "sl": "Cvetličarna Viktorija - Logotip"
@@ -105,9 +105,148 @@ const projects = {
         ]
       }
     },
-    //----------- POSTER -----------
+    //----------- POSTER OPICA ----------- 
     {
-      "id": "gwg-infographic",
+      "id": "anniversary-poster-monkey",
+      "title": {
+        "en": "Illustrated poster",
+        "sl": "Ilustrirani plakat"
+      },
+      "description": {
+        "en": "Illustrated poster for a company's internal anniversary event",
+        "sl": "Ilustrirani plakat za notranji dogodek"
+      },
+      "thumbnail": "projects_assets/project5/illustration_title.png",
+      "slug": "anniversary-monkey-poster",
+      "details": {
+        "type": {
+          "en": "Illustrated event poster",
+          "sl": "Ilustrirani dogodkovni plakat"
+        },
+        "images": [
+          "projects_assets/project5/illustration_big.png",
+        ],
+        "sections": [
+          {
+            "heading": {
+              "sl": "Predstavitev rešitve",
+              "en": "Solution overview"
+            },
+            "content": {
+              "paragraphs": [
+                {
+                  "sl": "Med praktičnim usposabljanjem sem oblikovala plakat za notranji dogodek ob 20. obletnici podjetja. Dogodek je vključeval nastope glasbenih skupin, kot presenečenje. Ker je maskota podjetja opica, sem jo izkoristila kot osrednji vizualni motiv. Ilustrirala sem opico, ki igra električni bas – s tem sem povezala glasbeno temo in prepoznavnost podjetja. Na plakatu sta vključila logotipa nastopajočih. Rezultat je dinamičen, zabaven in barvit plakat, ki hkrati promovira dogodek in krepi notranjo identiteto podjetja.",
+                  "en": "During my internship at the company, I was tasked with designing a poster for an internal event celebrating the company's 20th anniversary. The event featured performances by bands, which were meant as a surprise. Since the company's mascot is a monkey, I used it as the central visual motif. I illustrated a monkey playing an electric bass – thus connecting the musical theme with the company's recognisability. I also included the logos of performing bands. The result is a dynamic, fun and colourful poster that both promotes the event and strengthens the company's internal identity."
+                }
+              ]
+            }
+          },
+          {
+            "heading": {
+              "sl": "Izzivi",
+              "en": "Challenges"
+            },
+            "content": {
+              "list": [
+                {
+                  "sl": "Združiti ilustracijo, logotipa, informativne podatke in žive barve (oranžna) v berljivo kompozicijo.",
+                  "en": "Combine illustration, logos, event details and vibrant orange into a legible composition."
+                },
+                {
+                  "sl": "Izbrati tipografijo, ki ne osenči ilustracije.",
+                  "en": "Choosing typography that doesn't compete with the illustration."
+                },
+                {
+                  "sl": "Ustvariti občutek energije in praznovanja za 20. obletnico.",
+                  "en": "Create a sense of energy and celebration for a 20th anniversary."
+                }
+              ]
+            }
+          },
+          {
+            "heading": {
+              "sl": "Proces in rešitev",
+              "en": "Process and solution"
+            },
+            "content": {
+              "list": [
+                {
+                  "sl": "Analiza barv podjetja (oranžna, črna) in maskote.",
+                  "en": "Analysed company colours (orange, black) and mascot."
+                },
+                {
+                  "sl": "Skiciranje opice z glasbilom – Procreate.",
+                  "en": "Sketched monkey with instrument – Procreate."
+                },
+                {
+                  "sl": "Dopolnjena vektorska ilustracija v Adobe Illustratorju.",
+                  "en": "Vector illustration expanded in Adobe Illustrator."
+                },
+                {
+                  "sl": "Ozadje v komplementarni modri barvi, ognjeni elementi v oranžni/črni za dinamiko.",
+                  "en": "Complementary blue background, orange/black fire elements for dynamics."
+                },
+                {
+                  "sl": "Uporaba nevtralne sans‑serif pisave za informacije.",
+                  "en": "Neutral sans‑serif font for information."
+                },
+                {
+                  "sl": "Končna postavitev v InDesignu in priprava za tisk.",
+                  "en": "Final layout in InDesign in print preparation."
+                }
+              ]
+            }
+          },
+          {
+            "heading": {
+              "sl": "Rezultat",
+              "en": "Result"
+            },
+            "content": {
+              "list": [
+                {
+                  "sl": "Barvit, energičen plakat s prepoznavnim motivom.",
+                  "en": "Colourful, energetic poster with a recogniseable motif."
+                },
+                {
+                  "sl": "Natisnjen in razstavljen na prizorišču, uporabljen tudi v notranji komunikaciji.",
+                  "en": "Printed and displayed at the venue, also used in internal communication."
+                },
+                {
+                  "sl": "Podjetje navdušeno nad izvirno rabo maskote in barv.",
+                  "en": "Company delighted with creative use of mascot and colours."
+                }
+              ]
+            }
+          },
+          {
+            "heading": {
+              "sl": "Izdelava elementov in priprava za tisk",
+              "en": "Creation of elements and print preparation"
+            },
+            "content": {
+              "list": [
+                {
+                  "sl": "Ilustracija maskote v programu Procreate in AI.",
+                  "en": "Mascot illustration in Procreate and AI."
+                },
+                {
+                  "sl": "Postavitev logotipov, tipografije in podatkov v InDesignu.",
+                  "en": "Layout of logos, typography and information in InDesign."
+                },
+                {
+                  "sl": "Priprava za tisk: CMYK, 3 mm krvavitev, 300 DPI, PDF/X.",
+                  "en": "Print preparation: CMYK, 3 mm bleed, 300 DPI, PDF/X."
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    //----------- POSTER GWG -----------    
+    {
+      "id": "gwg-info",
       "title": {
         "en": "GWG Infographic – Color Management",
         "sl": "GWG infografika – Barvno upravljanje"
@@ -234,9 +373,9 @@ const projects = {
         ]
       }
     },
-    // ---------- BRAND 2 (brochure) ----------
+    // ---------- BROŠURA ----------
     {
-      id: "brand2",
+      id: "brochure",
       title: {
         en: "Brochure - informative leaflet",
         sl: "Brošura - informativna zgibanka"
@@ -339,9 +478,9 @@ const projects = {
         ]
       }
     },
-    // ---------- BRAND 1 (coffee) ----------
+    // ---------- KAVA ----------
     {
-      id: "brand1",
+      id: "coffee",
       title: {
         en: "Kava - student project",
         sl: "Kava - študijski projekt"
