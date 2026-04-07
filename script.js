@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ---------- MULTILANGUAGE DATA ----------
   const translations = {
     sl: {
       nav: { home: "Domov", cv: "CV", contact: "Kontakt" },
@@ -16,7 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
       footer: "© 2025 Lea Jazbinšek – Vse pravice pridržane.",
       formAlert: "Hvala! Sporočilo je bilo poslano (demo).",
       downloadCvBtn: "Prenesi CV",
-      viewProjectBtn: "Ogled projekta →"
+      viewProjectBtn: "Ogled projekta →",
+      // Contact form placeholders
+      contactNamePlaceholder: "Ime in priimek",
+      contactEmailPlaceholder: "E-pošta",
+      contactMessagePlaceholder: "Sporočilo..."
     },
     en: {
       nav: { home: "Home", cv: "Resume", contact: "Contact" },
@@ -33,7 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
       footer: "© 2025 Lea Jazbinšek – All rights reserved.",
       formAlert: "Thank you! Your message has been sent (demo).",
       downloadCvBtn: "Download CV",
-      viewProjectBtn: "View Project →"
+      viewProjectBtn: "View Project →",
+      // Contact form placeholders
+      contactNamePlaceholder: "Name and surname",
+      contactEmailPlaceholder: "Email",
+      contactMessagePlaceholder: "Message..."
     }
   };
 
@@ -86,6 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactPhone) contactPhone.textContent = t.contactPhone;
     const submitBtn = document.getElementById('submitBtn');
     if (submitBtn) submitBtn.textContent = t.submitBtn;
+
+    // Update contact form placeholders
+    const nameInput = document.getElementById('nameInput');
+    if (nameInput) nameInput.placeholder = t.contactNamePlaceholder;
+    const emailInput = document.getElementById('emailInput');
+    if (emailInput) emailInput.placeholder = t.contactEmailPlaceholder;
+    const msgInput = document.getElementById('msgInput');
+    if (msgInput) msgInput.placeholder = t.contactMessagePlaceholder;
 
     const cvTitle = document.getElementById('cvTitle');
     if (cvTitle) cvTitle.textContent = t.cvTitle;
@@ -226,10 +241,49 @@ document.addEventListener('DOMContentLoaded', () => {
   // Contact form
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      alert(translations[currentLang].formAlert);
-      contactForm.reset();
+
+      const submitBtn = document.getElementById('submitBtn');
+      const originalText = submitBtn.textContent;
+
+      // Show loading state
+      submitBtn.textContent = currentLang === 'sl' ? 'Pošiljanje...' : 'Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        const formData = new FormData(contactForm);
+        // The access_key is already in the form as a hidden input
+
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          const successMsg = currentLang === 'sl'
+            ? '✅ Sporočilo uspešno poslano!'
+            : '✅ Message sent successfully!';
+          alert(successMsg);
+          contactForm.reset();
+        } else {
+          const errorMsg = currentLang === 'sl'
+            ? `Napaka: ${data.message || 'Nekaj je šlo narobe.'}`
+            : `Error: ${data.message || 'Something went wrong.'}`;
+          alert(errorMsg);
+        }
+      } catch (error) {
+        console.error('Web3Forms error:', error);
+        const failMsg = currentLang === 'sl'
+          ? '❌ Napaka pri pošiljanju. Preverite internetno povezavo.'
+          : '❌ Submission failed. Please check your internet connection.';
+        alert(failMsg);
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
     });
   }
 
