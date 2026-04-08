@@ -112,7 +112,7 @@ const projects = {
         ]
       }
     },
-    //----------- POSTER OPICA ----------- 
+    //----------- POSTER OPICA RAZUM ----------- 
     {
       "id": "anniversary-poster-monkey",
       "title": {
@@ -251,7 +251,7 @@ const projects = {
         ]
       }
     },
-    //----------- POSTER GWG -----------    
+    //----------- POSTER GWG NTF-----------    
     {
       "id": "gwg-info",
       "title": {
@@ -380,7 +380,7 @@ const projects = {
         ]
       }
     },
-    // ---------- BROŠURA ----------
+    // ---------- BROŠURA KAVA NTF----------
     {
       id: "brochure",
       title: {
@@ -485,7 +485,7 @@ const projects = {
         ]
       }
     },
-    // ---------- KAVA ----------
+    // ---------- KAVA LOGO NTF----------
     {
       id: "coffee",
       title: {
@@ -496,7 +496,7 @@ const projects = {
         en: "Brand identity",
         sl: "Celostna grafična podoba"
       },
-      thumbnail: "projects_assets/project1/CGP_kava.png",
+      thumbnail: "projects_assets/project1/coffee_title_V4.png",
       slug: "coffee-brand-identity",
       details: {
         type: {
@@ -504,8 +504,7 @@ const projects = {
           sl: "Celostna grafična podoba"
         },
         images: [
-          "projects_assets/project1/coffee_BC.png",
-          "projects_assets/project1/coffee_poster.png"
+          "projects_assets/project1/CGP_kava_visual.png"
         ],
         sections: [
           {
@@ -567,6 +566,11 @@ const projects = {
           {
             type: "image",
             src: "projects_assets/project1/coffee.gif",
+            alt: { sl: "Kava logotip", en: "Coffee logo" }
+          },
+          {
+            type: "image",
+            src: "projects_assets/project1/coffee_BC.png",
             alt: { sl: "Kava logotip", en: "Coffee logo" }
           },
           {
