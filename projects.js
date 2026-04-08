@@ -124,7 +124,7 @@ const projects = {
           "sl": "Ilustrirani dogodkovni plakat"
         },
         "images": [
-          "projects_assets/project5/Illustration_title.png",
+          "projects_assets/project5/Illustration_big.png",
         ],
         "sections": [
           {
