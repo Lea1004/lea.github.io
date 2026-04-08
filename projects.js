@@ -21,7 +21,6 @@ const projects = {
         "images": [
           "projects_assets/project3/CV_logo_napis.png",
           "projects_assets/project3/CV_logo_geo.png",
-          "projects_assets/project3/CV_logo_progress_V2.png"
         ],
         "sections": [
           {
@@ -63,7 +62,15 @@ const projects = {
                   "sl": "Pri oblikovanju logotipa sem se osredotočila na simboliko, ki povezuje ljubezen lastnice do narave, njeno duhovno plat in pomen števila 3. Moja naloga je bila ustvariti preprost, a pomenljiv simbol, ki bo obenem sodoben in oseben.",
                   "en": "When designing the logo, I focused on symbolism that connects the owner's love of nature, her spiritual side and the meaning of the number 3. My task was to create a simple yet meaningful symbol that is both modern and personal."
                 }
-              ]
+              ],
+            }
+          },
+          {
+            "type": "image",
+            "src": "projects_assets/project3/CV_logo_progress_V2.png",
+            "alt": {
+              "sl": "Razvoj logotipa – skice in končna različica",
+              "en": "Logo development – sketches and final version"
             }
           },
           {
@@ -113,8 +120,8 @@ const projects = {
         "sl": "Ilustrirani plakat"
       },
       "description": {
-        "en": "Illustrated poster for an event",
-        "sl": "Ilustrirani plakat za dogodek"
+        "en": "Illustrated poster for a company's internal anniversary event",
+        "sl": "Ilustrirani plakat za notranji dogodek"
       },
       "thumbnail": "projects_assets/project5/Illustration_title.png",
       "slug": "anniversary-monkey-poster",
@@ -497,7 +504,6 @@ const projects = {
           sl: "Celostna grafična podoba"
         },
         images: [
-          "projects_assets/project1/coffee_title.png",
           "projects_assets/project1/coffee_BC.png",
           "projects_assets/project1/coffee_poster.png"
         ],
