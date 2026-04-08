@@ -113,8 +113,8 @@ const projects = {
         "sl": "Ilustrirani plakat"
       },
       "description": {
-        "en": "Illustrated poster for a company's internal anniversary event",
-        "sl": "Ilustrirani plakat za notranji dogodek"
+        "en": "Illustrated poster for an event",
+        "sl": "Ilustrirani plakat za dogodek"
       },
       "thumbnail": "projects_assets/project5/Illustration_title.png",
       "slug": "anniversary-monkey-poster",
