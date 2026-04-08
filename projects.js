@@ -116,7 +116,7 @@ const projects = {
         "en": "Illustrated poster for a company's internal anniversary event",
         "sl": "Ilustrirani plakat za notranji dogodek"
       },
-      "thumbnail": "projects_assets/project5/illustration_title.png",
+      "thumbnail": "projects_assets/project5/Illustration_title.png",
       "slug": "anniversary-monkey-poster",
       "details": {
         "type": {
@@ -124,7 +124,7 @@ const projects = {
           "sl": "Ilustrirani dogodkovni plakat"
         },
         "images": [
-          "projects_assets/project5/illustration_big.png",
+          "projects_assets/project5/Illustration_title.png",
         ],
         "sections": [
           {
