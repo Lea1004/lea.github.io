@@ -25,7 +25,6 @@
 
   <main>
     <div id="project-detail" class="container project-detail-container">
-      <!-- Content injected by script -->
     </div>
   </main>
 
@@ -67,7 +66,7 @@
     // Title
     const title = project.title[currentLang];
 
-    // Project type (supports object or string)
+    // Project type
     let type = project.details.type;
     if (type && typeof type === 'object') type = type[currentLang];
     if (!type) type = projectCategory || 'Project';
@@ -82,20 +81,38 @@
       </div>
     `;
 
-    // Gallery (if any)
+    // Gallery
+    
     if (images.length) {
-      // Custom layout for coffee project (3 images: stack first two, third on right)
-      if (slug === "coffee-brand-identity" && images.length === 3) {
-        html += `<div class="project-gallery coffee-gallery">`;
-        html += `<div class="gallery-stack">`;
-        html += `<img src="${images[0]}" alt="${title}" loading="lazy">`;
-        html += `<img src="${images[1]}" alt="${title}" loading="lazy">`;
-        html += `</div>`;
-        html += `<div class="gallery-single">`;
-        html += `<img src="${images[2]}" alt="${title}" loading="lazy">`;
-        html += `</div>`;
-        html += `</div>`;
+      // Custom layout for coffee project
+      if (slug === "coffee-brand-identity") {
+        if (images.length === 3) {
+          // original three‑image layout
+          html += `<div class="project-gallery coffee-gallery">`;
+          html += `<div class="gallery-stack">`;
+          html += `<img src="${images[0]}" alt="${title}" loading="lazy">`;
+          html += `<img src="${images[1]}" alt="${title}" loading="lazy">`;
+          html += `</div>`;
+          html += `<div class="gallery-single">`;
+          html += `<img src="${images[2]}" alt="${title}" loading="lazy">`;
+          html += `</div>`;
+          html += `</div>`;
+        } else if (images.length === 2) {
+          // two‑image layout: side by side
+          html += `<div class="project-gallery coffee-gallery-two">`;
+          html += `<img src="${images[0]}" alt="${title}" loading="lazy">`;
+          html += `<img src="${images[1]}" alt="${title}" loading="lazy">`;
+          html += `</div>`;
+        } else {
+          // fallback to default gallery
+          html += `<div class="project-gallery">`;
+          images.forEach(img => {
+            html += `<img src="${img}" alt="${title}" loading="lazy">`;
+          });
+          html += `</div>`;
+        }
       }
+        
       // Custom layout for brochure project (first full width, then two side by side)
       else if (slug === "coffee-themed-brochure" && images.length === 3) {
         html += `<div class="project-gallery brochure-gallery">`;
@@ -118,7 +135,7 @@
       }
     }
 
-    // Render sections (unchanged)
+    // Render sections
     sections.forEach(section => {
       if (section.type === 'image') {
         const altText = section.alt?.[currentLang] || section.alt || 'Project image';
