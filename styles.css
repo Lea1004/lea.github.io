@@ -1,4 +1,4 @@
-/* colors:  black&white -> manga style */
+/* colors:  black&white */
 
 * {
     margin: 0;
@@ -603,7 +603,7 @@ body.loaded .nav-select {
     }
 }
 
-/* CV page spacing improvements */
+/* CV SPACING */
 .cv-section {
     margin-bottom: 3rem;
     border-bottom: 1px solid var(--gray-mid);
@@ -654,79 +654,61 @@ body.loaded .nav-select {
     margin-bottom: 0.2rem;
 }
 
-/* ----- PROJECT CARDS (homepage) ----- */
+/* ----- PROJECT CARDS GRID ----- */
 .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
 }
-.project-card {
-    background: transparent;
-    border-radius: 40px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    box-shadow: var(--shadow-md);
+
+.project-card-link {
+  display: block;
+  text-decoration: none;
+  background: transparent;
+  border-radius: 20px;
+  transition: background 0.2s ease;
+  cursor: pointer;
+  padding: 12px; 
 }
-.project-card:hover {
-    background: var(--primary-dark);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+
+.project-card-link:hover {
+  background: #f5f5f5;
 }
-.project-card img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+
+.project-card-link img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  transition: transform 0.3s ease;
 }
-.project-card:hover img {
-    transform: scale(1.02);
+
+.project-card-link:hover img {
+  transform: scale(1.02);
 }
-.card-content {
-    padding: 1.5rem;
-    transition: color 0.2s ease;
+
+.project-card-text {
+  padding: 12px 4px 4px 4px; 
 }
-.project-card:hover .card-content {
-    color: white;
+
+.project-card-text h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #1e1e2a;
+  font-family: 'DM Sans', sans-serif;
 }
-.card-content h3 {
-    font-size: 1.35rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: inherit;
+
+.project-card-text p {
+  font-size: 0.9rem;
+  color: #4a4a4a;
+  margin: 0;
+  line-height: 1.4;
 }
-.card-content p {
-    color: inherit;
-    line-height: 1.5;
-    margin-bottom: 1.25rem;
-    font-size: 0.95rem;
-    opacity: 0.9;
-}
+
 .card-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: gap 0.2s;
-    background: transparent;
-    padding: 0.5rem 1.2rem;
-    border-radius: 40px;
-    font-size: 0.9rem;
-    color: var(--primary);
-}
-.project-card:hover .card-link {
-    background: white;
-    border-color: white;
-    color: var(--primary);
-}
-.card-link:hover {
-    gap: 0.75rem;
-}
-.projects-all {
-    margin: 3rem 0 5rem;
+  display: none;
 }
 
 /* ----- HERO TYPOGRAPHY ----- */
@@ -796,7 +778,7 @@ body.loaded .nav-select {
     }
 }
 
-/* ----- PROJECT SECTIONS (text blocks) ----- */
+/* ----- PROJECT SECTIONS ----- */
 .project-section {
     margin-bottom: 2rem;
 }
@@ -839,7 +821,7 @@ body.loaded .nav-select {
     box-shadow: var(--shadow-sm);
 }
 
-/* ----- GALLERY (default) ----- */
+/* ----- DEFAULT GALLERY ----- */
 .project-gallery {
     display: grid;
     grid-template-columns: 1fr;
@@ -862,7 +844,7 @@ body.loaded .nav-select {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-    align-items: center;        /* vertically centers images of different heights */
+    align-items: center;
     margin-bottom: 2.5rem;
 }
 .project-gallery.coffee-gallery-two img {
@@ -876,7 +858,7 @@ body.loaded .nav-select {
 .project-gallery.coffee-gallery-two img:hover {
     transform: scale(1.02);
 }
-/* On very small screens, keep side by side (no stacking) – only reduce gap */
+
 @media (max-width: 640px) {
     .project-gallery.coffee-gallery-two {
         display: flex;
@@ -886,7 +868,7 @@ body.loaded .nav-select {
     }
 }
 
-/* ----- COFFEE PROJECT: THREE IMAGES (original stacked left + single right) ----- */
+/* ----- COFFEE PROJECT - 3 images ----- */
 @media (min-width: 768px) {
     .project-gallery.coffee-gallery {
         display: grid;
@@ -913,7 +895,7 @@ body.loaded .nav-select {
         height: auto;
     }
 }
-/* Mobile: stack the three images vertically */
+/* --- MOBILE - vertical stack --- */
 @media (max-width: 767px) {
     .project-gallery.coffee-gallery {
         display: flex;
@@ -926,7 +908,7 @@ body.loaded .nav-select {
     }
 }
 
-/* ----- BROCHURE GALLERY (first full, then two side by side) ----- */
+/* ----- BROCHURE GALLERY ----- */
 .project-gallery.brochure-gallery {
     display: flex;
     flex-direction: column;
@@ -950,7 +932,7 @@ body.loaded .nav-select {
     box-shadow: var(--shadow-sm);
     object-fit: cover;
 }
-/* On mobile, stack the duo images vertically */
+/* MOBILE - vertical stack */
 @media (max-width: 640px) {
     .gallery-duo {
         flex-direction: column;
@@ -959,7 +941,7 @@ body.loaded .nav-select {
         width: 100%;
     }
 }
-/* Desktop height limit for brochure images */
+/* Brochure - DESKTOP */
 @media (min-width: 768px) {
     .gallery-full img {
         max-height: 70vh;
@@ -971,7 +953,7 @@ body.loaded .nav-select {
     }
 }
 
-/* ----- SINGLE‑IMAGE GALLERIES (poster projects) ----- */
+/* ----- SINGLE‑IMAGE GALLERIES - posters ----- */
 @media (min-width: 768px) {
     .project-gallery:has(img:only-child) {
         display: flex;
@@ -987,7 +969,7 @@ body.loaded .nav-select {
         box-shadow: var(--shadow-sm);
     }
 
-    /* ----- Default gallery (CV project etc.): make images smaller and centred on desktop ----- */
+    /* ----- Default gallery ----- */
     .project-gallery:not(.coffee-gallery):not(.coffee-gallery-two):not(.brochure-gallery) {
         display: flex;
         flex-direction: column;
@@ -996,7 +978,7 @@ body.loaded .nav-select {
     }
     .project-gallery:not(.coffee-gallery):not(.coffee-gallery-two):not(.brochure-gallery) img {
         width: auto;
-        max-width: 70vh;          /* adjust percentage as needed (e.g., 70%, 60%) */
+        max-width: 70vh;
         height: auto;
         object-fit: contain;
     }
