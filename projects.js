@@ -11,7 +11,7 @@ const projects = {
         "en": "Logo",
         "sl": "Logotip"
       },
-      "thumbnail": "projects_assets/project3/CV_logo_title.png",
+      "thumbnail": "projects_assets/project3/CV_logo_napis.png",
       "slug": "CV-logo",
       "details": {
         "type": {
