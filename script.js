@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ---------- MULTILANGUAGE DATA ----------
   const translations = {
     sl: {
       nav: { home: "Domov", cv: "CV", contact: "Kontakt" },
@@ -129,27 +130,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const allProjects = [];
     for (const category of Object.values(projects)) {
       allProjects.push(...category);
-    }
+  }
 
     allProjects.forEach(project => {
       const title = project.title[currentLang];
       const description = project.description[currentLang];
 
-      const card = document.createElement('div');
-      card.className = 'project-card';
-      card.innerHTML = `
-        <img src="${project.thumbnail}" alt="${title}">
-        <div class="card-content">
-          <h3>${title}</h3>
-          <p>${description}</p>
-          <a href="project.html?slug=${project.slug}" class="card-link">${translations[currentLang].viewProjectBtn}</a>
-        </div>
-      `;
-      gridContainer.appendChild(card);
+      // Create clickable card as an <a> element
+      const cardLink = document.createElement('a');
+      cardLink.href = `project.html?slug=${project.slug}`;
+      cardLink.className = 'project-card-link';
+
+      // Image
+      const img = document.createElement('img');
+      img.src = project.thumbnail;
+      img.alt = title;
+      img.loading = 'lazy';
+
+      // Text container
+      const textDiv = document.createElement('div');
+      textDiv.className = 'project-card-text';
+
+      const titleElem = document.createElement('h3');
+      titleElem.textContent = title;
+
+      const descElem = document.createElement('p');
+      descElem.textContent = description;
+
+      textDiv.appendChild(titleElem);
+      textDiv.appendChild(descElem);
+
+      cardLink.appendChild(img);
+      cardLink.appendChild(textDiv);
+
+      gridContainer.appendChild(cardLink);
     });
   }
 
-  //  OVERLAP DETECTION (simple, immediate) 
+  //  OVERLAP DETECTION
   function checkOverlap() {
     const langBtn = document.getElementById('floatingLangBtn');
     const footer = document.querySelector('footer');
@@ -287,13 +305,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Overlap checks: multiple attempts to ensure initial detection ---
+  // OVERLAP CHECK
   // First check immediately
   checkOverlap();
-  // Then after a short delay (for any layout shifts)
+
+  // After a short delay
   setTimeout(checkOverlap, 100);
   setTimeout(checkOverlap, 300);
-  // Also after the page is fully loaded (images, fonts)
+  
+  // After the page is fully loaded
   window.addEventListener('load', () => {
     document.body.classList.add('loaded');
     checkOverlap();
